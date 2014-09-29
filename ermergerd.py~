@@ -5,21 +5,20 @@ import sys, re
 def ermergerd(w):
     """
     I am aware nltk exists.
+    ermergerd a werd
+    replace y only if not at the beginning of a word
+    replace e only if not at end of word
+    if vowel sequence followed by 'r', do not put two r's, e.g. "word " --> "werd"
 
-    == ermergerd a werd ==
-    * replace y only if not at the beginning of a word
-    * replace e only if not at end of word
-    * if vowel sequence followed by 'r', do not put two r's, e.g. "word " --> "werd"
-    * treat "-tion" phonetically
 
-    == cases not handled / handled incorrectly: ==
+    cases not handled / handled incorrectly:
     * punctuation. lol.
     * irregular spelling like "brought". Actually, I think this is okay to leave.
     * "sequence" > "serqernc"
-    * multisyllabic vowel sequences, e.g. "sequoia"
+    * "say" "may" etc > "SERER" 
+    
+    Eventually turn this into a web app with flask. It is superior to J. Miller's app. At least on test cases like "penguins who are buying things"
 
-
-    == Example ==
     >>> economic demography
     ERCERNERMERC DERMERGRERPHER
     """
